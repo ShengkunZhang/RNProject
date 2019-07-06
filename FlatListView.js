@@ -88,7 +88,6 @@ export default class FlatListDemo extends Component < Props > {
   }
 
   componentDidMount() {
-    console.log(this.props.navigation.state.params.test)
     console.log(this.props.navigation.getParam('test2', 'default value'))
     this.fetchData()
   }
