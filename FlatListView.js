@@ -95,7 +95,12 @@ export default class FlatListDemo extends Component < Props > {
   }
 
   componentDidMount() {
+    // 取出导航栏跳转时传的参数，如果这个参数不存在则提前设置好的默认值
     console.log(this.props.navigation.getParam('test2', 'default value'))
+    // 也可以如下处理
+    if (this.props.navigation.state.params) {
+      console.log(this.props.navigation.state.params.test2)
+    }
     this.fetchData()
   }
 

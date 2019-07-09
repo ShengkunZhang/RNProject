@@ -64,6 +64,7 @@ export default class FirstView extends Component < Props > {
     return (
       <ScrollView style={styles.container}>
         <TouchableOpacity style={styles.touch} onPress={ ()=> {
+            // 导航栏的跳转以及传参
             this.props.navigation.navigate('FlatListS', {test: 'my test', test2: 'my test2'})
         }}>
           <Text>FlatList例子</Text>
