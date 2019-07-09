@@ -37,6 +37,7 @@ var REQUEST_URL =
 
 type Props = {};
 
+// 自定义title控件
 class LogoTitle extends React.Component {
   render() {
     return (
@@ -51,14 +52,20 @@ class LogoTitle extends React.Component {
 export default class FlatListDemo extends Component < Props > {
 
   static navigationOptions = {
+    // 正常navigation 的标题
     title: 'FlatListDemo',
+    // 导航栏的风格
     headerStyle: {
+      // 导航栏的背景颜色
       backgroundColor: 'orange',
     },
+    // 字体颜色
     headerTintColor: 'blue',
+    // 字体风格
     headerTitleStyle: {
       fontWeight: 'bold',
     },
+    // 标题使用自定义控件展示，则正常设置的title的值被替代
     headerTitle: <LogoTitle />,
   };
 
