@@ -27,6 +27,7 @@ export default class FirstView extends Component < Props > {
   //   title: 'FirstView',
   // };
 
+  // navigationOptions使用动态的值
   static navigationOptions = ({
     navigation
   }) => {
@@ -34,7 +35,7 @@ export default class FirstView extends Component < Props > {
       headerRight: (
         <Button
           onPress={navigation.getParam('increaseCount')}
-          title="+1"
+          title="右侧按钮"
           color="#fff"
         />
       ),
@@ -42,11 +43,19 @@ export default class FirstView extends Component < Props > {
   };
 
   componentDidMount() {
+    /*
+     * 改变动态值，以此达到修改navigation的目的
+     * 但是这里是将increaseCount与_increaseCount这个函数绑定了
+     * 最后的效果是点击右侧按钮这个函数响应。
+     * 之所有这么做是因为 headerRight 这个对应的里面不可以用this，不能直接 onPress={this._increaseCount()}
+     * 所以才如此间接处理
+     */
     this.props.navigation.setParams({
       increaseCount: this._increaseCount
     });
   }
 
+  // 对应的函数
   _increaseCount = () => {
     console.log('点击了');
   };
