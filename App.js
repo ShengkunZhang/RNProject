@@ -21,8 +21,8 @@ import {
   createAppContainer
 } from "react-navigation";
 
-import FlatListView from './FlatListView'
-import FirstView from './FirstView'
+import FlatListView from './src/FlatListView'
+import FirstView from './src/FirstView'
 
 const AppNavigator = createStackNavigator({
   FirstS: {
